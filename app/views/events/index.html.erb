@@ -1,0 +1,8 @@
+<h1>All events</h1>
+
+<% @events.each do |f| %>
+  <%= f.name %>
+  <%= f.location %>
+  <%= f.date %>
+  <p>Created by <%= f.creator.name %></p>
+<% end %>

@@ -1,1 +1,7 @@
 <h1><%= @user.name %></h1>
+<% @user.events.each do |f| %>
+  <%= f.name %>
+  <%= f.location %>
+  <%= f.date %>
+  <hr>
+<% end %>
