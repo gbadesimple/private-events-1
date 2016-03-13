@@ -8,11 +8,12 @@
 </head>
 <body>
   <% if logged_in? %>
-    <h1><%= current_user.name %></h1>
+    <h1><%= link_to current_user.name, current_user %></h1>
     <%= link_to "Log out", logout_path, method: "delete" %>
   <% else %>
     <%= link_to "Log in", login_path %>
   <% end %>
+  <%= link_to "All events", events_path %>
   <hr>
   <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

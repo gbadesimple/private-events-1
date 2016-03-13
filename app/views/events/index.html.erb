@@ -1,8 +1,17 @@
-<h1>All events</h1>
+<h1>Upcoming events</h1>
 
-<% @events.each do |f| %>
+<% @upcoming_events.each do |f| %>
   <%= f.name %>
   <%= f.location %>
   <%= f.date %>
-  <p>Created by <%= f.creator.name %></p>
+  <p>Created by <%= link_to f.creator.name, f.creator %></p>
+<% end %>
+
+<h3>Past events</h3>
+
+<% @past_events.each do |f| %>
+  <%= f.name %>
+  <%= f.location %>
+  <%= f.date %>
+  <p>Created by <%= link_to f.creator.name, f.creator %></p>
 <% end %>

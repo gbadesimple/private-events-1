@@ -1,7 +1,23 @@
 <h1><%= @user.name %></h1>
-<% @user.events.each do |f| %>
+<h3>Created events:</h3>
+<ul>
+<% @created_events.each do |f| %>
+  <li>
   <%= f.name %>
   <%= f.location %>
   <%= f.date %>
-  <hr>
+  </li>
 <% end %>
+</ul>
+<h3>Upcoming events: <%= @upcoming_events.count %></h3>
+<ol>
+<% @upcoming_events.each do |e| %>
+  <li><%= e.name %></li>
+<% end %>
+</ol>
+<h3>Previous events: <%= @previous_events.count %></h3>
+<ol>
+<% @previous_events.each do |e| %>
+  <li><%= e.name %></li>
+<% end %>
+</ol>
